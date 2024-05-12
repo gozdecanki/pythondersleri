@@ -1,0 +1,2 @@
+# pythondersleri
+ Python Eğitimi
