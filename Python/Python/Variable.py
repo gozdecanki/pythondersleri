@@ -46,3 +46,25 @@ a=b
 
 print(a)
 print(b)
+
+
+#int to float
+age = 30
+result = float(age)
+print(result)
+
+#float to int
+result=int(result)
+print(result)
+print(type(result))
+
+#bool to str
+isStudent = True
+result = str(isStudent)
+print(result) #True
+print(type(result)) # <class 'str'>
+
+#bool to int
+result = int(isStudent)
+print(result) # 1
+print(type(result)) # <class 'int'>

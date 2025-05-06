@@ -18,20 +18,27 @@ text=companyName.endswith("t")# son harfi t ile mi bitiryo  True
 text=companyName.upper()#BILGO SOFT
 text=companyName.lower()#bilgo soft
 text=companyName.title()# tüm kelimelerin 1. harflerini büyük harf çevirir
+text=companyName.islower()# tüm harfler lower ise True döner
 
 companyName2="   Bilgo soft    "
-text=companyName2.strip()#baştaki ve sondaki başlığı silmek istersek
+text=companyName2.strip()#baştaki ve sondaki boşluğu silmek istersek
 print(text)
-text=companyName2.lstrip()#baştaki  başlığı silmek istersek
+text=companyName2.lstrip()#baştaki  boşluğu silmek istersek
 print(text)
-text=companyName2.rstrip()#sondaki başlığı silmek istersek
+text=companyName2.rstrip()#sondaki boşluğu silmek istersek
 print(text)
 
 text=companyName2.split(" ")# ['','','','Bilgo','','soft','','',''] şeklinde parçalar ve listeye atar
 print(text)
+print(text[3])
 
 text="-".join(companyName2)# her karakter arasına - ekler. - - - B-i-l-g-o- -s-o-f-t- - - -
 print(text)
+
+msg="Python kursumuza Hoş geldiniz."
+
+index = msg.index('Hoş')
+print(index)
 
 text=companyName2.replace("s","S")
 print(text)
