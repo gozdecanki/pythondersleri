@@ -28,17 +28,37 @@ for x,y in opelObj.items():
 sonuc="marka" in opelObj
 print(sonuc)
 
-sonuc=len(opelObj)
-print(sonuc)#3
+# sonuc=len(opelObj)
+# print(sonuc)#3
+#
+# opelObj["renk"]= "kırmızı" #ekleme
+# print(opelObj)# {'marka': 'Opel', 'model': 'Corsa', 'yil': '2025', 'renk': 'kırmızı'}
+#
+# opelObj.pop("renk") # silme
+# print(opelObj)#{'marka': 'Opel', 'model': 'Corsa', 'yil': '2025'}
 
-opelObj["renk"]= "kırmızı" #ekleme
-print(opelObj)# {'marka': 'Opel', 'model': 'Corsa', 'yil': '2025', 'renk': 'kırmızı'}
+# opelObj.popitem()#sondan silme yapar
+# print(opelObj)#{'marka': 'Opel', 'model': 'Corsa'}
+#
+# del opelObj["marka"]
+# print(opelObj)#{'model': 'Corsa'}
+#
+# opelObj.clear()#tümünü siler
+# print(opelObj)
 
-opelObj.pop("renk") # silme
-print(opelObj)#{'marka': 'Opel', 'model': 'Corsa', 'yil': '2025'}
+# obj =opelObj #referans ataması yapıldığı için 2 nesnede de aynı değer çıktı verir
+# obj["marka"]="Mazda"
+# print(obj)     #{'marka': 'Mazda', 'model': 'Corsa', 'yil': '2025'}
+# print(opelObj) #{'marka': 'Mazda', 'model': 'Corsa', 'yil': '2025'}
 
-opelObj.popitem()#sondan silme yapar
-print(opelObj)#{'marka': 'Opel', 'model': 'Corsa'}
 
-del opelObj["marka"]
-print(opelObj)#{'model': 'Corsa'}
+# obj =opelObj.copy() #referans ataması olmadığı için farklı değerlere sahip olurlar
+# obj["marka"]="Mazda"
+# print(obj)     #{'marka': 'Mazda', 'model': 'Corsa', 'yil': '2025'}
+# print(opelObj) #{'marka': 'Opel', 'model': 'Corsa', 'yil': '2025'}
+
+opelObj.update({
+    "marka": "Bmw",
+    "renk" : "Kırmızı"
+})
+print(opelObj)# {'marka': 'Bmw', 'model': 'Corsa', 'yil': '2025', 'renk': 'Kırmızı'}
