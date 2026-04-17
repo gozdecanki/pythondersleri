@@ -6,7 +6,7 @@ class Comment:
     def __init__(self, username, text, likes=0, dislikes=0):
         self.username = username
         self.text = text
-        self.likes = likes
+        self.likes = likes 
         self.dislikes = dislikes
 
 c1 = Comment("sadikturan","güzel kurs")
