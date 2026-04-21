@@ -1,0 +1,6 @@
+hello world.
+ikinci satır.
+birinci satır.
+üçüncü satır.
+dördüncü satır.
+beşinci satır.
