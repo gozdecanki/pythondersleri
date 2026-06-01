@@ -115,7 +115,7 @@ tvw["column"] = ("id","firstname","lastname","email")
 tvw.column("#0", width=50, minwidth=30)
 tvw.column("#1", width=200, minwidth=100)
 tvw.column("#2", width=200, minwidth=100)
-tvw.column("#2", width=200, minwidth=100)
+tvw.column("#3", width=200, minwidth=100)
 
 # heading
 tvw.heading("id", text="Id", anchor="w")
