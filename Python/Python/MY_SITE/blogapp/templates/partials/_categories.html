@@ -1,6 +1,13 @@
-   <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action " aria-current="true">Programlama </a>
-                        <a href="#" class="list-group-item list-group-item-action">Web Programlama</a>
-                        <a href="#" class="list-group-item list-group-item-action">Mobil Uygulamalar</a>
+<div class="list-group">
+  {% for category in categories %}
+  {% if category.slug == selected_category  %}
+      <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action active"
+        aria-current="true"> {{category.name|title }}</a>
+  {% else %}
+      <a href="{% url 'blogs_by_category' category.slug %}" class="list-group-item list-group-item-action"
+        aria-current="true"> {{category.name|title }}</a>
+  {% endif %}
 
-                    </div>
+   
+  {% endfor %}
+</div>

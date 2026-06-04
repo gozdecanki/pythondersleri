@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from os import getenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,24 +21,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6hersr2_nbcavqa2=n5%0$k3qm9c#8#3r@+9-=f)@!_0f++k+^'
+# SECRET_KEY = 'django-insecure-6hersr2_nbcavqa2=n5%0$k3qm9c#8#3r@+9-=f)@!_0f++k+^'
+SECRET_KEY = getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("IS_DEVELOPMENT",True)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    getenv("APP_HOST")
+]
 
 # Application definition
 
 INSTALLED_APPS = [
     'blog',
+    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -124,5 +129,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
     BASE_DIR / "static"
 ]
+
+
+STATIC_ROOT= BASE_DIR / "staticfiles"
+
+MEDIA_ROOT = BASE_DIR / "uploads" # asıl image dizinimiz
+MEDIA_URL ="/images/" # takma bir dizin ismi veriyoruz ki asıl file dosyamıza erişilmesin
 
 
